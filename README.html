@@ -365,11 +365,9 @@ Brazil, 2010–2024: a Bayesian spatiotemporal modelling
 study</strong></p>
 </blockquote>
 <p>The study aimed to characterise the temporal and spatial distribution
-of tuberculosis (TB) mortality across Brazilian municipalities between
-2010 and 2024, examine contextual factors associated with mortality, and
-develop a Bayesian municipal prioritisation framework integrating risk
-magnitude, temporal dynamics, spatial patterns, posterior uncertainty,
-and robustness to support public health decision-making.</p>
+of tuberculosis mortality across Brazilian municipalities between 2010
+and 2024, examine contextual factors associated with mortality, and
+develop a Bayesian municipal prioritisation framework.</p>
 <p>The repository provides the complete analytical workflow, from
 preparation of mortality and population data to descriptive
 epidemiology, spatial analysis, Bayesian spatiotemporal modelling,
@@ -394,19 +392,15 @@ municipal level.</p>
 <li>adjusted priority scores;</li>
 <li>estimated relative risks and posterior probabilities;</li>
 <li>municipality-specific temporal trends;</li>
-<li>hotspot persistence and emergence;</li>
+<li>hotspot persistence and newly identified;</li>
 <li>spatial–temporal regime stability;</li>
 <li>municipality-level estimates and 95% credible intervals.</li>
 </ul>
 <p>The dashboard includes geographic filters by region and state,
 interactive municipal maps, evidence plots, searchable municipal
-results, and options to download the filtered data.</p>
-<p>The dashboard is publicly available at: <a href="https://cenariostb.unb.br/mortalitytb/">Open the Municipal
+results, and options to download the filtered data. It is publicly
+available at: <a href="https://cenariostb.unb.br/mortalitytb/">Municipal
 Tuberculosis Mortality Priority Dashboard</a></p>
-<p>The dashboard is intended to support the interpretation and
-dissemination of the study findings. It should not replace local
-epidemiological assessment, data-quality evaluation, or public-health
-decision-making.</p>
 <hr />
 </div>
 <div id="study-overview" class="section level2">
@@ -434,7 +428,7 @@ persistence, posterior evidence, uncertainty, and robustness.</p></li>
 </div>
 <div id="repository-structure" class="section level2">
 <h2>Repository structure</h2>
-<p>The recommended GitHub repository structure is:</p>
+<p>The GitHub repository structure is:</p>
 <pre class="text"><code>mortalitytb/
 ├── README.md
 ├── LICENSE
@@ -482,10 +476,7 @@ persistence, posterior evidence, uncertainty, and robustness.</p></li>
         ├── outputs/
         ├── figures/
         └── tables/</code></pre>
-<p>The scripts create most output directories automatically. Raw data,
-fitted models, intermediate objects, and large output files do not need
-to be version-controlled unless their public redistribution is permitted
-and scientifically justified.</p>
+<p>The scripts create most output directories automatically.</p>
 <hr />
 </div>
 <div id="analytical-workflow" class="section level2">
@@ -623,7 +614,7 @@ complete-regime stability.</p>
 <li>constructing transition matrices;</li>
 <li>calculating national, regional, state-level, and regime-specific
 persistence measures;</li>
-<li>evaluating hotspot emergence and resolution;</li>
+<li>evaluating hotspot newly identified and attenuated;</li>
 <li>calculating entropy-based stability measures;</li>
 <li>producing stability tables and figures;</li>
 <li>generating the enriched municipal stability dataset used by the
@@ -646,7 +637,7 @@ classifications.</p>
 <p>Main tasks include:</p>
 <ul>
 <li>assigning component scores for spatial classification, hotspot
-persistence or emergence, relative risk, exceedance probability,
+persistence or newly identified, relative risk, exceedance probability,
 temporal trend, temporal evidence, regime stability, and state
 context;</li>
 <li>rescaling the central priority score to 0–100;</li>
@@ -729,9 +720,6 @@ resulting file as:</p>
 age-specific population denominators required by
 <code>01_descriptive_analysis.R.</code> Variable names and formats must
 match those referenced in the script.</p>
-<p>The absence of <code>pop_br.csv</code> from the GitHub repository
-does not affect access to the analysis code, but the file is required to
-reproduce the mortality-rate calculations and subsequent analyses.</p>
 <hr />
 </div>
 </div>
@@ -745,13 +733,8 @@ Nevertheless:</p>
 <ul>
 <li>raw source data should only be redistributed when permitted by the
 original data provider;</li>
-<li>individual-level mortality extracts should not be committed to a
-public GitHub repository unless their public redistribution is
-explicitly authorised;</li>
 <li>public repository releases should preferentially contain aggregated
 municipality-level analytical data;</li>
-<li>small-cell disclosure and data-provider requirements should be
-reviewed before publication;</li>
 <li>users remain responsible for complying with the terms of use of the
 Brazilian Mortality Information System (SIM), population datasets
 (IBGE), contextual indicators, and spatial data providers.</li>
@@ -760,9 +743,6 @@ Brazilian Mortality Information System (SIM), population datasets
 <code>06_tb_priority_index.R</code> is intended to contain
 municipality-level analytical results rather than identifiable
 individual records.</p>
-<p>The <code>data/README.md</code> file should describe how authorised
-users can obtain the original source data and how the local files must
-be named, rather than redistributing restricted raw files.</p>
 <hr />
 </div>
 <div id="variable-codebook" class="section level2">
@@ -958,7 +938,7 @@ positive.</td>
 </tr>
 <tr class="odd">
 <td><code>hotspot_status</code></td>
-<td>Persistence, emergence, resolution, or absence of hotspot
+<td>Persistence, newly identified, attenuated, or absence of hotspot
 status.</td>
 </tr>
 <tr class="even">
@@ -1061,7 +1041,7 @@ class.</td>
 <p>The central priority score combines evidence from:</p>
 <ol style="list-style-type: decimal">
 <li>current spatial classification;</li>
-<li>hotspot persistence or emergence;</li>
+<li>hotspot persistence or newly identified;</li>
 <li>adjusted relative-risk magnitude;</li>
 <li>posterior probability that relative risk exceeds 1;</li>
 <li>municipality-specific temporal trend;</li>
@@ -1150,13 +1130,6 @@ generated by the scripts.</p>
 <p><code>INLA</code> and <code>RSTr</code> may require installation
 outside the standard CRAN workflow. Install them using the instructions
 provided by their official maintainers.</p>
-<p>For reproducibility, use a project-level dependency manager such as
-<code>renv</code>:</p>
-<pre class="r"><code>install.packages(&quot;renv&quot;)
-renv::init()
-renv::snapshot()</code></pre>
-<p>A generated <code>renv.lock</code> file can then be committed to the
-repository.</p>
 <hr />
 </div>
 </div>

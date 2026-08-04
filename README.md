@@ -30,9 +30,7 @@ The dashboard allows users to examine:
 - spatial–temporal regime stability;
 - municipality-level estimates and 95% credible intervals.
 
-The dashboard includes geographic filters by region and state, interactive municipal maps, evidence plots, searchable municipal results, and options to download the filtered data.
-
-The dashboard is publicly available at: [Open the Municipal Tuberculosis Mortality Priority Dashboard](https://cenariostb.unb.br/mortalitytb/)
+The dashboard includes geographic filters by region and state, interactive municipal maps, evidence plots, searchable municipal results, and options to download the filtered data. It is publicly available at: [Municipal Tuberculosis Mortality Priority Dashboard](https://cenariostb.unb.br/mortalitytb/)
 
 ------------------------------------------------------------------------
 
@@ -58,7 +56,7 @@ The dashboard is publicly available at: [Open the Municipal Tuberculosis Mortali
 
 ## Repository structure
 
-The recommended GitHub repository structure is:
+The GitHub repository structure is:
 
 ``` text
 mortalitytb/
@@ -110,7 +108,7 @@ mortalitytb/
         └── tables/
 ```
 
-The scripts create most output directories automatically. Raw data, fitted models, intermediate objects, and large output files do not need to be version-controlled unless their public redistribution is permitted and scientifically justified.
+The scripts create most output directories automatically. 
 
 ------------------------------------------------------------------------
 
